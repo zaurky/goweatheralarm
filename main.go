@@ -14,6 +14,7 @@ import (
 
 const Default_duration int = 5  // in days
 const Default_threshold int = 3 // in °C
+const Default_tty = "/dev/ttyUSB0"
 
 type Config struct {
 	duration  int
@@ -21,6 +22,7 @@ type Config struct {
 	lat       float64
 	long      float64
 	phone     string
+	tty       string
 }
 
 func (c *Config) ParseConfig() error {
@@ -29,6 +31,7 @@ func (c *Config) ParseConfig() error {
 	flag.Float64Var(&c.lat, "latitude", 0, "The latitude where to watch")
 	flag.Float64Var(&c.long, "longitude", 0, "The longitude where to watch")
 	flag.StringVar(&c.phone, "phone", "", "The phone number to which we send message.")
+	flag.StringVar(&c.tty, "tty", Default_tty, "The serial interface for the GSM adapter.")
 
 	flag.Parse()
 	if len(c.phone) == 0 {
@@ -46,14 +49,14 @@ func (c *Config) ParseConfig() error {
 	return nil
 }
 
-func SendSMS(telephone, message string) {
-	conf := serial.Config{Name: "/dev/ttyUSB0", Baud: 115200}
-	modem, err := gogsmmodem.Open(&conf, true)
+func SendSMS(conf Config, message string) {
+	serial_conf := serial.Config{Name: conf.tty, Baud: 115200}
+	modem, err := gogsmmodem.Open(&serial_conf, true)
 	if err != nil {
 		panic(err)
 	}
 
-	err = modem.SendMessage(telephone, message)
+	err = modem.SendMessage(conf.phone, message)
 	if err != nil {
 		panic(err)
 	}
@@ -83,6 +86,6 @@ func main() {
 		}
 	}
 	if len(full_message) != 0 {
-		SendSMS(conf.phone, full_message[0:159])
+		SendSMS(conf, full_message[0:159])
 	}
 }
