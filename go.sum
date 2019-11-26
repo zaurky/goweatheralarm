@@ -1,0 +1,10 @@
+github.com/barnybug/gogsmmodem v0.0.0-20180823201430-c663385185b4 h1:X8YaejLr2YG0SQfCkN9H8hG999xE2aAI5QLAukUUAGA=
+github.com/barnybug/gogsmmodem v0.0.0-20180823201430-c663385185b4/go.mod h1:ygRhdpuzn1CUOOUnMbhXQ4UfHKeEEPTvpNcIj4SO+WA=
+github.com/jonaz/astrotime v0.0.0-20150127084258-5d2b676e5047 h1:H116DwaFx14mDVP2d7gDw5CTqPjvitSbwSxYTtbcUHg=
+github.com/jonaz/astrotime v0.0.0-20150127084258-5d2b676e5047/go.mod h1:2IUrxSOG2BFL1TPEVaMvOL/b0fJcldiGXyw8OWZAUM4=
+github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07 h1:UyzmZLoiDWMRywV4DUYb9Fbt8uiOSooupjTq10vpvnU=
+github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07/go.mod h1:kDXzergiv9cbyO7IOYJZWg1U88JhDg3PB6klq9Hg2pA=
+github.com/zaurky/go-yrapi v0.0.0-20191125085744-e5102bd6129a h1:+CEtW2mv7j+HNOTZLo12ndq75XBEzvFOH+psnxX9Eh0=
+github.com/zaurky/go-yrapi v0.0.0-20191125085744-e5102bd6129a/go.mod h1:sj5+pM7g/+oUUY9XspF5LW/FVWwULuIFtTfR61zE/ic=
+golang.org/x/sys v0.0.0-20191120155948-bd437916bb0e h1:N7DeIrjYszNmSW409R3frPPwglRwMkXSBzwVbkOjLLA=
+golang.org/x/sys v0.0.0-20191120155948-bd437916bb0e/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
